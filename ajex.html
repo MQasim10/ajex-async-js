@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajex-Prectice | Qasim Haleem |</title>
+</head>
+<body>
+    <button class="load" onclick="loadData()">load Data</button>
+    <div class="data" id="data">
+
+    </div>
+
+    
+</body>
+<script>
+    
+
+
+
+
+    /* const loadData = () => {
+        const obj = new XMLHttpRequest();
+        obj.onreadystatechange = function() {
+            if(obj.readyState === 4 && obj.status === 200){
+                const data = this.response;
+                const parse = JSON.parse(data)
+                // const darastr = JSON.stringify(parse,null,2)
+                const html = parse.map(item => {
+                    return item.title
+                // console.log(parse);
+
+                })
+                document.getElementById("data").innerText = html;
+                    console.log(html);
+                // console.log("data load");
+            }
+        }
+        obj.open('Get', 'https://jsonplaceholder.typicode.com/todos', true)
+        obj.send();
+    }
+  */
+
+
+
+ /* const loadData = () => {
+        const xhr = new XMLHttpRequest()
+        console.log('data load succesfully');
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                // const data = this.responseText;
+                const full = JSON.parse(this.responseText) 
+                const dataString = JSON.stringify(full,null,2);
+                console.log(dataString);
+                // const idd = full.idd
+                document.getElementById('data').innerText = dataString;
+            }
+        }
+        xhr.open('Get','https://jsonplaceholder.typicode.com/todos', true)
+        xhr.send();
+    }
+ 
+ */
+
+</script>
+</html>
