@@ -6,6 +6,39 @@
     <title>PreAjex | Qasim Haleem|</title>
 </head>
 <body>
-    
+    <button id="btn" onclick="load()"><span>See The Data</span></button>
+    <div id="res_data">
+        <ul id="menu"></ul>
+
+    </div>
 </body>
+<script>
+    const load = () => {
+        const req = new XMLHttpRequest();
+        req.onreadystatechange = function() {
+            if(this.readyState===4 && this.status === 200) {
+                const todo = JSON.parse(this.responseText);
+                const title = todo.map(todo => todo.title);
+                let full_title;
+                title.forEach((title, index) => {
+                    full_title = title + " " + todo[index].completed;
+                    document.getElementById("menu").innerHTML += "<li>" + full_title + "</li>";
+            })
+
+                const li = document.createElement('li');
+                li.textContent = todo.title;
+                document.getElementById('menu').appendChild(li);
+                console.log(title);
+
+
+                // const data = this.responseText;
+                // const full = JSON.parse(data);
+                // const datastr = JSON.stringify(full)
+
+                            }
+        }
+        req.open('Get', 'https://jsonplaceholder.typicode.com/todos', true);
+        req.send();
+    }
+</script>
 </html>
